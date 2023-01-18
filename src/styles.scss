@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+body { margin: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #008080;
+  --primary-dark: #005a5a;
+  --secondary: #800060;
+  --secondary-dark: #5a0043;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbffff;
+}

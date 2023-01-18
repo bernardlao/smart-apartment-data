@@ -1,0 +1,8 @@
+<div class="map-layout">
+  <app-item-details
+    *ngIf="selectedItem$ | async as mapItem; else noSelected"
+    [mapItem]="mapItem"
+  ></app-item-details>
+  <ng-template #noSelected><app-map-sidebar></app-map-sidebar></ng-template>
+  <app-map-content></app-map-content>
+</div>

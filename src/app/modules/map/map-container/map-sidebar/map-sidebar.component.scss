@@ -1,0 +1,98 @@
+:host::ng-deep {
+  .sidebar-container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    .title-container,
+    .selection-container,
+    .filter-container {
+      padding-inline: 8px;
+      padding-block: 16px;
+    }
+    .title-container {
+      background-color: var(--primary);
+      span {
+        color: white;
+      }
+    }
+    .filter-container {
+      background-color: #B3D8D8;
+      color: var(--primary-dark);
+      display: flex;
+      flex-direction: column;
+      .bedrooms-filter {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 4px;
+        & > span {
+          font-weight: bold;
+          flex-basis: content;
+        }
+      }
+      .rent-filter {
+        .form-label {
+          font-weight: bold;
+        }
+      }
+      .btn {
+        display: flex;
+        align-self: flex-end;
+      }
+    }
+    .selection-container {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+      .selection-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px;
+        padding: 8px;
+        border: 1px solid gray;
+        border-radius: 8px;
+        background-color: rgb(226, 255, 255);
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+        transition: 0.3s;
+        cursor: pointer;
+        .item-info {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          .item-name {
+            font-weight: bold;
+            margin-bottom: 8px;
+          }
+          .item-address {
+            font-size: 12px;
+          }
+          .item-floorplan {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+            flex-wrap: wrap;
+            .floor {
+              display: grid;
+              grid-template-columns: repeat(2, auto);
+              gap: 4px;
+              align-items: center;
+              span {
+                display: block;
+                font-size: 12px;
+              }
+            }
+          }
+          .amenities {
+            font-size: 12px;
+          }
+        }
+        .item-image {
+          width: 120px;
+          height: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+:host::ng-deep {
+  .viewer-container {
+    height: calc(100vh - 8px);
+    padding: 4px;
+  }
+}

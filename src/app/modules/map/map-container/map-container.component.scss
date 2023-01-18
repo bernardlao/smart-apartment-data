@@ -1,0 +1,9 @@
+:host::ng-deep {
+  .map-layout {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    overflow-y: hidden;
+  }
+}

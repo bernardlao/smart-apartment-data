@@ -1,0 +1,46 @@
+<div class="details-container">
+  <div class="title-container">
+    <span class="back-link" (click)="onBackToResult()">Back to Results</span>
+  </div>
+  <div class="important-details">
+    <h5>{{ mapItem.name }}</h5>
+    <span>
+      {{ mapItem.streetAddress }} {{ mapItem.city }} {{ mapItem.state }}
+    </span>
+    <span></span>
+  </div>
+  <div class="property-details">
+    <div class="item-floorplan">
+      <div class="floor" *ngFor="let fp of mapItem.floorplans">
+        <i class="bi" [ngClass]="'bi-' + fp.bedrooms + '-square-fill'"></i>
+        <span *ngIf="fp.bedrooms === 0; else bedrooms">Studio</span>
+        <ng-template #bedrooms>
+          <span>{{ fp.bedrooms }} bedroom{{ fp.bedrooms > 1 ? "s" : "" }}</span>
+        </ng-template>
+        <span>{{ fp.price | currency }}</span>
+      </div>
+    </div>
+    <img [src]="mapItem.photo" alt="property_image" class="image" />
+    <h5>Other Information</h5>
+    <div class="other-details">
+      <span> <b>Pets Allowed?:</b> {{ mapItem.pets ? "Yes" : "No" }} </span>
+      <span>
+        <b>Senior Housing?:</b> {{ mapItem.seniorHousing ? "Yes" : "No" }}
+      </span>
+      <span>
+        <b>Student Housing?:</b> {{ mapItem.studentHousting ? "Yes" : "No" }}
+      </span>
+    </div>
+    <div class="amenities">
+      <h6>
+        High Value Amenities:
+        {{ mapItem.highValueAmenities.length > 0 ? "" : "None" }}
+      </h6>
+      <ul type="disc">
+        <li *ngFor="let amenity of mapItem.highValueAmenities">
+          {{ amenity }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

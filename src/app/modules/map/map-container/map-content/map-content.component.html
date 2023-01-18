@@ -1,0 +1,9 @@
+<div
+  class="viewer-container"
+  *ngIf="{ items: mapItems$ | async } as source"
+>
+  <app-map-viewer
+    [items]="source.items ?? []"
+    (selectItem)="onSelectItem($event)"
+  ></app-map-viewer>
+</div>
